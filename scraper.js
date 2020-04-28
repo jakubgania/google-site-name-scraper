@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const siteName = 'github.com';
+const siteName = 'pclab.pl';
 
 (async () => {
     const browser = await puppeteer.launch({
@@ -22,9 +22,11 @@ const siteName = 'github.com';
     await browser.close();
 
     let numberResult = getNumberOfResults(stringResult);
+    let clearNumberResult = clearingFromCommas(numberResult);
 
     console.log('raw result : ' + stringResult);
-    console.log('extracted number : ' + numberResult)
+    console.log('extracted number : ' + numberResult);
+    console.log('cleared and parsed number : ' + parseInt(clearNumberResult))
 })();
 
 // function works correctly for english language
@@ -36,4 +38,8 @@ function getNumberOfResults(stringResult) {
     numberResult = numberResult.trim();
 
     return numberResult;
+}
+
+function clearingFromCommas(text) {
+    return text.replace(/,/g, '');
 }
