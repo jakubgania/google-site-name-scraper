@@ -1,0 +1,23 @@
+{
+  "name": "google-site-name-scraper",
+  "version": "1.0.0",
+  "description": "A simple scraper design for retrieving information from the site:example_name.com command from Google.",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakubgania/google-site-name-scraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakubgania/google-site-name-scraper/issues"
+  },
+  "homepage": "https://github.com/jakubgania/google-site-name-scraper#readme",
+  "dependencies": {
+    "puppeteer": "^3.0.2"
+  }
+}
