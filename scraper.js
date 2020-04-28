@@ -17,9 +17,23 @@ const siteName = 'github.com';
 
     let [element] = await page.$x('/html/body/div[6]/div[2]/div[6]/div/div/div/div/div');
 
-    let result = await page.evaluate(element => element.innerText, element);
+    let stringResult = await page.evaluate(element => element.innerText, element);
 
     await browser.close();
 
-    console.log(result)
+    let numberResult = getNumberOfResults(stringResult);
+
+    console.log('raw result : ' + stringResult);
+    console.log('extracted number : ' + numberResult)
 })();
+
+// function works correctly for english language
+function getNumberOfResults(stringResult) {
+    let indexStart = 6; // About 10000 => about_ first letter starts at hte 6th position
+    let indexEnd = stringResult.search('result');
+
+    let numberResult = stringResult.slice(indexStart, indexEnd);
+    numberResult = numberResult.trim();
+
+    return numberResult;
+}

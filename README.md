@@ -12,3 +12,7 @@ to do :
 - saving data to file
 - comparing data from readings
 - run as a docker container ?
+
+
+
+run script => node scraper.js
