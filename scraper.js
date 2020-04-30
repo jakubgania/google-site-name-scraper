@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const siteName = 'hypercode.it';
+const siteName = 'example.com';
 
 // problem - if the result equals 1 problem with parsing the number
 
@@ -31,7 +31,7 @@ const siteName = 'hypercode.it';
     let clearNumberResult = clearingFromCommas(numberResult);
 
     console.log('raw result : ' + stringResult);
-    console.log('pagination :' + paginationResult);
+    console.log('pagination : ' + paginationResult);
     console.log('extracted number : ' + numberResult);
     console.log('cleared and parsed number : ' + parseInt(clearNumberResult))
 })();
